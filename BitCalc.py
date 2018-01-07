@@ -27,7 +27,8 @@ valor = soup.find(class_='coin-value')
 
 # imprime a variável valor 
 
-print(type(valor))
+# mostra o tipo da variável fins didáticos
+# print(type(valor))
 
 # dentro da variável valor podemos ver que existem diversos outros indicadores
 # devemos extrair o indicador desejado
@@ -38,15 +39,20 @@ precoBTC = re.findall(r'\$[0-9,.]+',valor.text)
 
 # transforma precoBTC em string
 
-print(type(precoBTC))
+# Mostra o tipo da variável precoBTC
 
+# print(type(precoBTC))
 
-
+# Transforma a lista em string
 BTC = str(precoBTC)
 
-print(type(BTC))
+# Mostra o tipo de variável
 
-#BTC = str(precoBTC).strip('[]')
+#print(type(BTC))
+
+# Tratamento da string precoBTC para que a mesma vire float 
+# primeiro remoção dos colchetes( [] ), depois cifrão ($), depois a vírgula(,) e por fim
+# as aspas simples (') 
 
 BTC = str(BTC).strip('[]')
 
@@ -56,8 +62,19 @@ BTC = BTC.replace(',',"")
 
 BTC = BTC.strip("'")
 
+#  transforma a string em float
+
 teste = ast.literal_eval(BTC)
 
-print(type(teste))
 
-print(teste)
+# Mostra o tipo da variável teste
+#print(type(teste))
+
+# imprime a variável teste
+
+#print(teste)
+
+# Variável BTC agora é to tipo float por receber a variável teste
+BTC=teste
+
+
