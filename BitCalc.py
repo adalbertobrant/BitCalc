@@ -7,6 +7,7 @@
 
 import os
 import sys
+import ast
 import re
 import requests
 from bs4 import BeautifulSoup
@@ -39,6 +40,8 @@ precoBTC = re.findall(r'\$[0-9,.]+',valor.text)
 
 print(type(precoBTC))
 
+
+
 BTC = str(precoBTC)
 
 print(type(BTC))
@@ -51,11 +54,10 @@ BTC = BTC.replace('$',"")
 
 BTC = BTC.replace(',',"")
 
-#floatlista = [float(x) for x in BTC]
+BTC = BTC.strip("'")
 
-#print (floatlista)
+teste = ast.literal_eval(BTC)
 
+print(type(teste))
 
-
-print(BTC)
-
+print(teste)
