@@ -19,7 +19,7 @@ dolarReal = requests.get('http://economia.awesomeapi.com.br/USD-BRL/1?format=xml
 
 
 
-# Obejeto do BeautifulSoup 
+# Objeto do BeautifulSoup 
 
 soup = BeautifulSoup(pagina.text, 'html.parser')
 soup1 = BeautifulSoup(dolarReal.text,'html.parser')
